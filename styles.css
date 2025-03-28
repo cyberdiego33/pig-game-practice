@@ -31,6 +31,7 @@ body {
 }
 
 .closeOverlay {
+  font-size: 20px;
   color: red;
   position: absolute;
   padding: 10px;
@@ -38,52 +39,6 @@ body {
 
   top: 1px;
   right: 1px;
-}
-
-.paper-instruction {
-  position: relative;
-
-  padding: 2rem;
-  width: fit-content;
-  max-width: 600px;
-
-  
-  width: 500px;
-  padding: 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f5e6ca;
-  color: #4a3f35;
-  border-radius: 2px;
-}
-
-.instruction {
-  position: relative;
-}
-
-.layer1 {
-  background: hsl(40, 35%, 76%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 2px;
-}
-.layer2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-  box-shadow: inset 0 0 40px 10px hsla(0, 0%, 0%, 0.8);
-  background: url('paper-texture.webp'),
-              linear-gradient(to bottom right, 
-              hsla(0, 0%, 0%, 0.4), 
-              hsla(0, 0%, 0%, 1));
-  background-size: cover;
-  mix-blend-mode: overlay;
 }
 
 header {
@@ -286,4 +241,94 @@ btn:active {
     row-gap: 1rem;
     grid-auto-flow: row;
 }
+}
+
+/* Instructions for game  */
+
+.paper-instruction {
+  position: relative;
+
+  padding: 2rem;
+  width: fit-content;
+  max-width: 600px;
+
+  
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f5e6ca;
+  color: #4a3f35;
+  border-radius: 2px;
+}
+
+.instruction, .rules-container {
+  position: relative;
+}
+
+.layer1 {
+  background: hsl(40, 35%, 76%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+}
+.layer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: inset 0 0 40px 10px hsla(0, 0%, 0%, 0.8);
+  background: url('paper-texture.webp'),
+              linear-gradient(to bottom right, 
+              hsla(0, 0%, 0%, 0.4), 
+              hsla(0, 0%, 0%, 1));
+  background-size: cover;
+  mix-blend-mode: overlay;
+}
+
+
+#rules-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#rules-btn:hover {
+  background: #45a049;
+}
+
+.rules-content {
+  text-align: left;
+}
+
+.rules-content h2 {
+  text-align: center;
+}
+
+.rules-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rules-content ul li {
+  margin: 10px 0;
+}
+
+.rules-content ul ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+@media (max-width: 560px) {
+  .paper-instruction {
+    max-width: 90vw;
+  }
 }

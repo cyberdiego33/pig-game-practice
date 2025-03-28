@@ -25,9 +25,31 @@
     <div class="paper-instruction">
       <div class="layer1"></div>
       <div class="layer2"></div>
-      <div class="closeOverlay">X</div>
+      <div class="closeOverlay">&times;</div>
       <p class="instruction">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cum voluptatibus modi quam iure cumque quia doloribus ut sunt aperiam.
+        <div class="rules-container">
+          <button id="rules-btn">📜 Game Rules</button>
+          <div class="rules-popup" id="rules-popup">
+              <div class="rules-content">
+                  <!-- <span class="close-btn" id="close-btn">&times;</span> -->
+                  <h2>🏆 Pig Game Rules 🎲</h2>
+                  <ul>
+                      <li><strong>Objective:</strong> Be the first to reach <strong>50 points</strong> or more to win.</li>
+                      <li><strong>Rolling the Dice:</strong>
+                          <ul>
+                              <li>Rolling a number adds it to your <strong>current score</strong>.</li>
+                              <li>Press <strong>Hold</strong> to save your current score to your total and pass the turn.</li>
+                          </ul>
+                      </li>
+                      <li><strong>Rolling a 1:</strong> Your current score resets to 0, and the turn passes to the other player.</li>
+                      <li><strong>Active Player:</strong> Has a lighter background and bold font.</li>
+                      <li><strong>Winning:</strong> The first player to reach 50 or more points wins! 🎉</li>
+                      <li><strong>New Game:</strong> Click <strong>New Game</strong> to restart.</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      
       </p>
     </div>
   </div>
