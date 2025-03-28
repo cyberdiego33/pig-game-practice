@@ -60,7 +60,10 @@ const switchPlayer = function() {
     playerVar1.classList.toggle('player--active');
 
     activePlayer = activePlayer === 0 ? 1 : 0;
+    times = 0;
 };
+
+let times = 0;
 
 
 // Roll dice Event listener 
@@ -73,14 +76,21 @@ rollDice.addEventListener('click', function() {
     
         if (dice !== 1) {
             currentScore += dice;
+            times++;
             document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+
+            if (times === 5) {
+                holdGame();
+            }
+
+
         } else {
             switchPlayer();
         }
     }
 });
 
-holdScore.addEventListener('click', function () {
+const holdGame = function() {
     if (playing) {
         totalScores[activePlayer] += currentScore;
         document.querySelector(`#score--${activePlayer}`).textContent = totalScores[activePlayer];
@@ -97,8 +107,13 @@ holdScore.addEventListener('click', function () {
             diceImg.classList.toggle('hidden');
         }
 
+        times = 0;
         switchPlayer();
     }
+};
+
+holdScore.addEventListener('click', function () {
+    holdGame();
 });
 
 newGameVar.addEventListener("click", starting);
