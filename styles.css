@@ -5,6 +5,7 @@
 }
 
 body {
+  padding: 2rem 1rem;
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
     color: #333;
@@ -53,7 +54,7 @@ main {
     font-size: 4rem;
     font-weight: 300;
     color: #c7365f;
-    margin-bottom: 5rem;
+    margin-bottom: 6.5rem;
   }
   
   .player--active {
@@ -126,13 +127,17 @@ main {
 }
 .btn-flex {
     position: absolute;
-    top: 50%;
+    top: 70%;
     width: 100%;
     transform: translateY(-50%);
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    align-items: center;
 }
-
+.btn--roll {
+  margin-bottom: 1rem;
+}
 
 btn:active {
     transform: translate(-50%, 3px);
@@ -144,10 +149,6 @@ btn:active {
   }
 
 @media (max-width: 760px) {
-
-    body {
-        padding: 0 1rem;
-    }
     .name {
         font-size: 1rem;
     }
@@ -158,7 +159,7 @@ btn:active {
         font-size: 3.5rem;
     }
     .player {
-        padding: 6rem .5rem 3rem;
+        padding: 6rem .5rem 2rem;
     }
     .dice {
         width: 60px;
@@ -166,6 +167,9 @@ btn:active {
     .btn {
         padding: 0.75rem 1rem;
         font-size: 1rem;
+    }
+    .btn-flex {
+      top: 50%;
     }
 }
 
