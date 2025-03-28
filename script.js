@@ -28,6 +28,8 @@ const playerVar1 = document.querySelector('.player--1');
 const newGameVar = document.querySelector('.btn--new');
 
 let totalScores, playing, activePlayer, currentScore;
+let winner = [0, 0]
+
 
 const starting = function() {
     currentPlayer0.textContent = 0;
@@ -87,6 +89,10 @@ holdScore.addEventListener('click', function () {
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
 
+            document.querySelector('.winners').classList.remove('hidden');
+            winner[activePlayer] += 1 
+            document.querySelector(`.winner-${activePlayer}`).textContent = winner[activePlayer];
+
             playing = false;
             diceImg.classList.toggle('hidden');
         }
@@ -96,3 +102,17 @@ holdScore.addEventListener('click', function () {
 });
 
 newGameVar.addEventListener("click", starting);
+
+const closeOverlay = document.querySelector('.closeOverlay');
+const overlay = document.querySelector('.overlay');
+const openOverlay = document.querySelector('.displayOverlay');
+
+overlay.addEventListener('click', function () {
+    overlay.classList.add('hidden');
+});
+closeOverlay.addEventListener('click', function () {
+    overlay.classList.add('hidden');
+});
+openOverlay.addEventListener('click', function () {
+    overlay.classList.remove('hidden');
+})
